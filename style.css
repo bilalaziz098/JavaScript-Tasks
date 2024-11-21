@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  background-color: rgb(39, 83, 97);
+  width: 50%;
+  padding: 20px;
+
+  margin: auto;
+  border-radius: 20px;
+  color: rgb(219, 219, 219);
+}
+
+.main {
+  height: 945px;
+  background-image: url("./21.animation-of-question-marks-on-green-background.jpg");
+  background-repeat: repeat;
+}
+
+.input {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.input>input {
+  padding: 15px 15px;
+  width: 30%;
+  font-size: 15px;
+}
+
+.btn {
+  justify-content: center;
+  display: flex;
+  margin-top: 20px;
+}
+
+.btn>p {
+  background-color: rgb(30, 136, 30);
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.btn>p:hover {
+  background-color: rgb(23, 100, 23);
+}
+
+.btnTask {
+  justify-content: center;
+  display: flex;
+  background-color: rgb(25, 36, 16);
+  padding: 20px 0px;
+  border-radius: 10px;
+  color: white;
+  display: none;
+  width: 10%;
+  margin: auto;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.btnTask:hover {
+  background-color: rgb(32, 78, 90);
+}
+
+.container2 {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+
+}
+
+.otherTasks {
+  display: none;
+}
+
+.container2>p {
+  display: none;
+  padding: 20px;
+  font-size: 25px;
+  color: white;
+  width: 20%;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgb(73, 145, 85);
+}

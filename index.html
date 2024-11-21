@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div id="Task1">
+        <br />
+        <div class="container">
+          <h1>Task 1</h1>
+          <h3>
+            Given a string, your task is to replace each of its characters by
+            the next one in the English alphabet; i.e. replace a with b, replace
+            b with c, etc (z would be replaced by a)
+          </h3>
+        </div>
+        <br />
+        <div class="input">
+          <input id="myText1" type="text" placeholder="Enter any string" />
+        </div>
+
+        <div class="btn">
+          <p onclick="task1()" id="btn">Change</p>
+        </div>
+
+        <div class="container2">
+          <p id="displayT1"></p>
+        </div>
+        <p onclick="next2()" class="btnTask" id="btnTask2">Next Task</p>
+      </div>
+      <!-- Task 2-->
+
+      <div id="Task2" class="otherTasks">
+        <br />
+        <div class="container">
+          <h1>Task 2</h1>
+          <h3>
+            You are given an array of integers digits representing the digits of
+            a positive integer. For example, digits = [1, 2, 3] represents the
+            integer 123. It is guaranteed that digits does not have any leading
+            zeros. Assuming that digits represents the integer n, your task is
+            to return an array that represents the integer n + 1. Example For
+            digits = [1, 2, 3], the output should be solution(digits) = [1, 2,
+            4]; For digits = [1, 2, 9], the output should be solution(digits) =
+            [1, 3, 0]; For digits = [9, 9, 9], the output should be
+            solution(digits) = [1, 0, 0, 0].
+          </h3>
+        </div>
+        <br />
+        <div class="input">
+          <input id="myText2" type="text" placeholder="Enter array inputs" />
+        </div>
+
+        <div class="btn">
+          <p onclick="task2()" id="btn">Submit</p>
+        </div>
+
+        <div class="container2">
+          <p id="displayT2"></p>
+        </div>
+        <p onclick="next3()" class="btnTask" id="btnTask3">Next Task</p>
+      </div>
+
+      <!-- Task 3 -->
+
+      <div id="Task3" class="otherTasks">
+        <br />
+        <div class="container">
+          <h1>Task 3</h1>
+          <h3>
+            Given an array a of positive integers, find the number of pairs of
+            integers for which the difference between the two numbers is equal
+            to a given number k.
+          </h3>
+        </div>
+        <br />
+        <div class="input">
+          <input
+            id="myText3"
+            type="text"
+            placeholder="Enter single digit positive integers"
+          />
+          <input id="myText33" type="text" placeholder="Enter k: " />
+        </div>
+
+        <div class="btn">
+          <p onclick="task3()" id="btn">Submit</p>
+        </div>
+
+        <div class="container2">
+          <p id="k"></p>
+
+          <p id="display"></p>
+        </div>
+        <p onclick="next4()" class="btnTask" id="btnTask4">Next Task</p>
+      </div>
+
+      <!-- Task 4 -->
+
+      <div id="Task4" class="otherTasks">
+        <br />
+        <div class="container">
+          <h1>Task 4</h1>
+          <h3>
+            Check if the given string is a correct time representation of the
+            24-hour clock. Example For time = “13:58”, the output should be
+            solution(time) = true; For time = “25:51", the output should be
+            solution(time) = false; For time = “02:76”, the output should be
+            solution(time) = false.
+          </h3>
+        </div>
+        <br />
+        <div class="input">
+          <input id="myText4" type="text" placeholder="Enter string" />
+        </div>
+
+        <div class="btn">
+          <p onclick="task4()" id="btn">Submit</p>
+        </div>
+
+        <div class="container2">
+          <p id="displayT4"></p>
+        </div>
+
+        <p onclick="next5()" class="btnTask" id="btnTask5">Next Task</p>
+      </div>
+
+      <!-- Task 5 -->
+
+      <div id="Task5" class="otherTasks">
+        <br />
+        <div class="container">
+          <h1>Task 5</h1>
+          <h3>
+            Given a sequence of integers as an array, determine whether it is
+            possible to obtain a strictly increasing sequence by removing no
+            more than one element from the array. Note: sequence a0, a1, ..., an
+            is considered to be a strictly increasing if a0 < a1 < ... < an.
+            Sequence containing only one element is also considered to be
+            strictly increasing.
+          </h3>
+          <h3>
+            Example For sequence = [1, 3, 2, 1], the output should be
+            solution(sequence) = false. There is no one element in this array
+            that can be removed in order to get a strictly increasing sequence.
+            For sequence = [1, 3, 2], the output should be solution(sequence) =
+            true. You can remove 3 from the array to get the strictly increasing
+            sequence [1, 2]. Alternately, you can remove 2 to get the strictly
+            increasing sequence [1, 3].
+          </h3>
+        </div>
+        <br />
+        <div class="input">
+          <input
+            id="myText5"
+            type="text"
+            placeholder="Enter single digit positive integers"
+          />
+        </div>
+
+        <div class="btn">
+          <p onclick="task5()" id="btn">Submit</p>
+        </div>
+
+        <div class="container2">
+          <p id="displayT5"></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function task1() {
+        let string2 = [];
+        let input = document.getElementById("myText1");
+        let string = input.value;
+        console.log(string);
+        for (let i in string) {
+          if (string[i] === " " || string[i] === ",") string2[i] = string[i];
+          else if (string[i] === "z") {
+            string2[i] = string[i].charCodeAt(0) - 25;
+            string2[i] = String.fromCharCode(string2[i]);
+          } else if (string[i] === "Z") {
+            // console.log(string[i].charCodeAt(0))
+            string2[i] = string[i].charCodeAt(0) - 25;
+            string2[i] = String.fromCharCode(string2[i]);
+          } else {
+            string2[i] = string[i].charCodeAt(0) + 1;
+            // console.log(string2[i])
+            string2[i] = String.fromCharCode(string2[i]);
+          }
+          // console.log(string2)
+        }
+        let sh = string2.join("");
+        (document.getElementById("displayT1").style.display = "block"),
+          (document.getElementById("displayT1").innerHTML = sh);
+        document.getElementById("btnTask2").style.display = "flex";
+      }
+      function task2() {
+        let input = document.getElementById("myText2").value;
+        let inputArr = [];
+        for (let i = 0; i < input.length; i++) {
+          if (input[i] === " " || input[i] === ",") continue;
+          inputArr.push(input[i]);
+        }
+
+        console.log(inputArr);
+        let add = Number(inputArr.join(""));
+        // console.log(typeof(add));
+        add = add + 1;
+
+        // console.log(add)
+        let n = add.toString().split("");
+
+        // console.log(typeof(outputArr))
+        // console.log(add)
+        // console.log(add[1])
+        let outputArr = [];
+        n.map((num) => outputArr.push(Number(num)));
+        console.log(outputArr);
+        (document.getElementById("displayT2").style.display = "block"),
+          (document.getElementById("displayT2").innerHTML =
+            "<p>[" + outputArr + "]</p>");
+        document.getElementById("btnTask3").style.display = "flex";
+      }
+
+      function task3() {
+        let input = document.getElementById("myText3").value;
+        let data = input.split(",");
+        let arr = [];
+        for (let i = 0; i < data.length; i++) {
+          if (data[i] === " " || data[i] === ",") continue;
+          arr.push(data[i]);
+        }
+        console.log(arr);
+
+        let k = document.getElementById("myText33").value;
+        let count = 0;
+        let pair = [];
+        let pair2 = [];
+        let pairs = [];
+        function difference(arr) {
+          console.log(arr);
+          for (let i = 0; i < arr.length; i++) {
+            for (let j = i + 1; j < arr.length; j++) {
+              // debugger;
+              let n = (arr[i] - arr[j]) * -1;
+              if (n == k) {
+                pair.push(arr[i]);
+                pair2.push(arr[j]);
+                console.log(pair);
+                count = count + 1;
+              }
+            }
+          }
+        }
+
+        function display() {
+          let array = [];
+          console.log(`(k,a) = ${count}`);
+          if (count === 1) {
+            (document.getElementById("k").style.display = "block"),
+              (document.getElementById("k").innerHTML = `(k,a) = ${count}`);
+            console.log(
+              `There is ${count} pair of integers whose difference is equal to ${k}:`
+            );
+            for (let i = 0; i < pairs.length; i++) {
+              console.log();
+              (document.getElementById("display").style.display = "block"),
+                (document.getElementById(
+                  "display"
+                ).innerHTML = `(${pairs[i]})`);
+            }
+          } else {
+            (document.getElementById("k").style.display = "block"),
+              (document.getElementById("k").innerHTML = `(k,a) = ${count}`);
+            console.log(
+              `There are ${count} pairs of integers whose difference is equal to ${k}:`
+            );
+            for (let i = 0; i < pairs.length; i++) {
+              console.log(`(${pairs[i]})`);
+
+              array.push(`(${pairs[i]})`);
+            }
+            console.log(array);
+            (document.getElementById("display").style.display = "block"),
+              (document.getElementById("display").innerHTML = array);
+          }
+        }
+        difference(arr);
+        pairs = pair.map((val1, val2) => [val1, pair2[val2]]);
+        display();
+
+        document.getElementById("btnTask4").style.display = "flex";
+      }
+      function task4() {
+        let x = document.getElementById("myText4").value;
+        const pattern = new RegExp(/^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/);
+        output = pattern.test(x);
+        (document.getElementById("displayT4").style.display = "block"),
+          (document.getElementById("displayT4").innerHTML = output);
+        document.getElementById("btnTask5").style.display = "flex";
+      }
+      function task5() {
+        let input = document.getElementById("myText5").value;
+        let data = input.split(",");
+        let arr = [];
+        for (let i = 0; i < data.length; i++) {
+          if (data[i] === " " || data[i] === ",") continue;
+          else arr.push(Number(data[i]));
+        }
+
+        console.log(arr);
+
+        function countF() {
+          for (let i = 0; i < arr.length; i++) {
+            if (arr[i] >= arr[i + 1] && arr[i] >= arr[i + 2]) {
+              arr.splice(i, 1);
+              count = count + 1;
+              break;
+            } else if (arr[i] >= arr[i + 1] && arr[i] <= arr[i + 2]) {
+              arr.splice(i + 1, 1);
+              count = count + 1;
+              break;
+            }
+            console.log(arr[i]);
+          }
+          console.log(arr);
+          for (let i = 0; i < arr.length; i++) {
+            console.log("secon");
+            if (arr[i] >= arr[i + 1]) {
+              count = count + 1;
+              break;
+            }
+          }
+
+          if (count > 1) {
+            document.getElementById("displayT5").style.display = "flex";
+            document.getElementById("displayT5").innerHTML =
+              "solution(sequence) = false.";
+          } else {
+            document.getElementById("displayT5").style.display = "flex";
+            document.getElementById("displayT5").innerHTML =
+              "solution(sequence) = True. ";
+            // increasingOrder();
+          }
+        }
+
+        let count = 0;
+        let good = true;
+
+        countF();
+        console.log(count);
+      }
+      function next2() {
+        document.getElementById("Task2").style.display = "block";
+        document.getElementById("Task1").style.display = "none";
+      }
+      function next3() {
+        document.getElementById("Task3").style.display = "block";
+        document.getElementById("Task2").style.display = "none";
+      }
+      function next4() {
+        document.getElementById("Task4").style.display = "block";
+        document.getElementById("Task3").style.display = "none";
+      }
+      function next5() {
+        document.getElementById("Task5").style.display = "block";
+        document.getElementById("Task4").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
